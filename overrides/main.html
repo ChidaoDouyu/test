@@ -1,36 +1,21 @@
-{% extends "base.html" %}
-
-{% block content %}
-{{ super() }}
-{% if page and page.meta and page.meta.template %}
-<div id="waline" style="margin-top: 80px;padding-top: 12px;max-width: 1200px;"></div>
-{% endif %}
-{% endblock %}
-
-{% block styles %}
-{{ super() }}
-<link
-    rel="stylesheet"
-    href="https://unpkg.com/@waline/client@v3/dist/waline.css"
-  />
-<style>
-    .md-grid {
-        max-width: 1200px;
-    }
-</style>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{% if page and page.meta and page.meta.template %}
-  <script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-
-    init({
-      el: '#waline',
-      serverURL: 'https://comments.chiyoyuki.uk/',
-      dark: 'auto',
-    });
-  </script>
-{% endif %}
-{% endblock %}
+<head>
+    <!-- ... -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+    />
+    <!-- ... -->
+  </head>
+  <body>
+    <!-- ... -->
+    <div id="waline"></div>
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  
+      init({
+        el: '#waline',
+        serverURL: 'https://comments.chiyoyuki.uk/',
+        dark: 'auto',
+      });
+    </script>
+  </body>
