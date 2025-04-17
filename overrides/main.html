@@ -3,7 +3,7 @@
 {% block content %}
 {{ super() }}
 {% if page and page.meta and page.meta.template %}
-<div id="waline" style="margin-top: 80px;padding-top: 12px;"></div>
+<div id="waline" style="margin-top: 80px;padding-top: 12px;max-width: 1200px;"></div>
 {% endif %}
 {% endblock %}
 
@@ -15,7 +15,7 @@
   />
 <style>
     .md-grid {
-        max-width: 120000px;
+        max-width: 1200px;
     }
 </style>
 {% endblock %}
